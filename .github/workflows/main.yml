@@ -1,4 +1,4 @@
-name: eksworkflow
+name: Main EKS Workflow
 #on:
 #  push:
 #    branches: [master]
