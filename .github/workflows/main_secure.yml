@@ -1,4 +1,4 @@
-name: eksworkflow
+name: Secure EKS Workflow
 on:
   push:
     branches: [master]
