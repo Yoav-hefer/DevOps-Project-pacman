@@ -39,3 +39,4 @@ jobs:
       run: |
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG ./docker
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+ 
