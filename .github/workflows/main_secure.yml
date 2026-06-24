@@ -1,7 +1,11 @@
-name: Secure EKS Workflow
+name: eksworkflow
 on:
   push:
     branches: [master]
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   cicd_job:
@@ -12,12 +16,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
         
-    - name: Configure AWS credentials
+    - name: Configure temporary AWS credentials with OIDC
       uses: aws-actions/configure-aws-credentials@v6.1.0
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-west-2
+        role-to-assume: arn:aws:iam::416338226474:role/GithubAction-Role
+        role-session-name: github-actions-${{ github.run_id }}
 
     - name: Confirm AWS account
       run: aws sts get-caller-identity
