@@ -52,3 +52,4 @@ jobs:
         kubectl rollout status statefulset mongo
         kubectl rollout status deployment pacman-deployment
         kubectl get svc
+         
