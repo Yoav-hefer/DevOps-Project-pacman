@@ -45,6 +45,10 @@ jobs:
 
     - name: Deploy to EKS
       run: |
+        kubectl apply -f ./k8s/storage_class.yaml
+        kubectl apply -f ./k8s/db_sts.yaml
         kubectl apply -f ./k8s/app_deployment.yaml
 
-  
+        kubectl rollout status statefulset mongo
+        kubectl rollout status deployment pacman-deployment
+        kubectl get svc
