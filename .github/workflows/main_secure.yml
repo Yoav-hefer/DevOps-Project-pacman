@@ -20,7 +20,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v6.1.0
       with:
         aws-region: us-west-2
-        role-to-assume: arn:aws:iam::416338226474:role/GithubAction-Role
+        role-to-assume: arn:aws:iam::878564870545:role/GitHubAction-role
         role-session-name: github-actions-${{ github.run_id }}
 
     - name: Confirm AWS account
