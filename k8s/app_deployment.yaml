@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: pacman
-        image: 878564870545.dkr.ecr.us-west-2.amazonaws.com/myapps/pacman:eafdc6adecc3fa55fe84c539d9775220038d0bdb
+        image: 878564870545.dkr.ecr.us-west-2.amazonaws.com/myapps/pacman:465c08f9a8013dc6356cf9aa9c151df40a64b494
         imagePullPolicy: IfNotPresent
         env:
         - name: MONGO_SERVICE_HOST
