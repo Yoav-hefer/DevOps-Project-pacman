@@ -20,7 +20,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v6.1.0
       with:
         aws-region: us-west-2
-        role-to-assume: arn:aws:iam::878564870545:role/GitHubAction-role
+        role-to-assume: arn:aws:iam::416338226474:role/GithubAction-Role
         role-session-name: github-actions-${{ github.run_id }}
 
     - name: Confirm AWS account
@@ -39,4 +39,12 @@ jobs:
       run: |
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG ./docker
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
- 
+
+    - name: Connect to EKS
+      run: aws eks update-kubeconfig --region us-west-2 --name PacmanCluster
+
+    - name: Deploy to EKS
+      run: |
+        kubectl apply -f ./k8s/app_deployment.yaml
+
+  
