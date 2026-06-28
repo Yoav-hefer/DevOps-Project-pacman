@@ -26,31 +26,31 @@ graph TD
 ```
 
 🛠️ Tech Stack
-Cloud Provider: AWS (EKS, ECR, IAM, NLB, EBS)
+* Cloud Provider: AWS (EKS, ECR, IAM, NLB, EBS)
 
-Containerization: Docker
+* Containerization: Docker
 
-Orchestration: Kubernetes (Deployments, StatefulSets, Services, StorageClasses)
+* Orchestration: Kubernetes (Deployments, StatefulSets, Services, StorageClasses)
 
-CI/CD: GitHub Actions (OIDC Integration)
+* CI/CD: GitHub Actions (OIDC Integration)
 
-Database: MongoDB
+* Database: MongoDB
 
 🔄 CI/CD Pipeline Workflow
-Push: Developer pushes code changes to the master branch.
+* Push: Developer pushes code changes to the master branch.
 
-Auth: GitHub Actions authenticates securely with AWS using a short-lived OIDC token (eliminating the need for static access keys).
+* Auth: GitHub Actions authenticates securely with AWS using a short-lived OIDC token (eliminating the need for static access keys).
 
-Build & Push: A new Docker image is built, tagged with the unique Git Commit SHA ($GITHUB_SHA), and pushed to Amazon ECR.
+* Build & Push: A new Docker image is built, tagged with the unique Git Commit SHA ($GITHUB_SHA), and pushed to Amazon ECR.
 
-Deploy: The pipeline updates the EKS cluster using an imperative kubectl set image command, rolling out the new version dynamically with zero downtime.
+* Deploy: The pipeline updates the EKS cluster using an imperative kubectl set image command, rolling out the new version dynamically with zero downtime.
 
 📂 Repository Structure
-.github/workflows/main_secure.yml: The CI/CD pipeline definition.
+* .github/workflows/main_secure.yml: The CI/CD pipeline definition.
 
-ekscluster/cluster.yaml: Infrastructure as Code (IaC) for EKS Auto Mode.
+* ekscluster/cluster.yaml: Infrastructure as Code (IaC) for EKS Auto Mode.
 
-k8s/: Kubernetes manifests (Deployment, StatefulSet, Services, gp3 StorageClass).
+* k8s/: Kubernetes manifests (Deployment, StatefulSet, Services, gp3 StorageClass).
 
 <img width="1600" height="729" alt="workflow" src="https://github.com/user-attachments/assets/26f05d8e-41eb-40e8-b3ca-699878431376" />
 <img width="1336" height="912" alt="pacman" src="https://github.com/user-attachments/assets/962573d6-bcc0-47dc-9134-10adc4729cb8" />
