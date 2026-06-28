@@ -22,7 +22,8 @@ graph TD
         ECR -.->|Image Pull| Pacman
     end
     
-    User([Gamer / User]) -->|HTTP| NLB ```
+    User([Gamer / User]) -->|HTTP| NLB
+```
 
 🛠️ Tech Stack
 Cloud Provider: AWS (EKS, ECR, IAM, NLB, EBS)
