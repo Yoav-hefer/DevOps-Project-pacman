@@ -1,12 +1,10 @@
-<div align="center">
-  <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
-  <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
-  <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
-  <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
-  <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
-</div>
-
-<br>
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+  <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white" />
+  <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" />
+</p>
 
 ## 📑 Table of Contents
 - [Overview](#-overview)
@@ -44,6 +42,7 @@ graph TD
 ```
 
 🛠️ Tech Stack
+
 * Cloud Provider: AWS (EKS, ECR, IAM, NLB, EBS)
 
 * Containerization: Docker
@@ -55,6 +54,7 @@ graph TD
 * Database: MongoDB
 
 🔄 CI/CD Pipeline Workflow
+
 * Push: Developer pushes code changes to the master branch.
 
 * Auth: GitHub Actions authenticates securely with AWS using a short-lived OIDC token (eliminating the need for static access keys).
@@ -64,6 +64,7 @@ graph TD
 * Deploy: The pipeline updates the EKS cluster using an imperative kubectl set image command, rolling out the new version dynamically with zero downtime.
 
 📂 Repository Structure
+
 * .github/workflows/main_secure.yml: The CI/CD pipeline definition.
 
 * ekscluster/cluster.yaml: Infrastructure as Code (IaC) for EKS Auto Mode.
