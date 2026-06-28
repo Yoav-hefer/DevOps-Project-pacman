@@ -22,7 +22,7 @@ graph TD
         ECR -.->|Image Pull| Pacman
     end
     
-    User([Gamer / User]) -->|HTTP| NLB
+    User([Gamer / User]) -->|HTTP| NLB ```
 
 🛠️ Tech Stack
 Cloud Provider: AWS (EKS, ECR, IAM, NLB, EBS)
@@ -50,4 +50,9 @@ Deploy: The pipeline updates the EKS cluster using an imperative kubectl set ima
 ekscluster/cluster.yaml: Infrastructure as Code (IaC) for EKS Auto Mode.
 
 k8s/: Kubernetes manifests (Deployment, StatefulSet, Services, gp3 StorageClass).
+
+<img width="1600" height="729" alt="workflow" src="https://github.com/user-attachments/assets/26f05d8e-41eb-40e8-b3ca-699878431376" />
+<img width="1336" height="912" alt="pacman" src="https://github.com/user-attachments/assets/962573d6-bcc0-47dc-9134-10adc4729cb8" />
+
+
 
