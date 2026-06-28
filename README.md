@@ -51,9 +51,3 @@ ekscluster/cluster.yaml: Infrastructure as Code (IaC) for EKS Auto Mode.
 
 k8s/: Kubernetes manifests (Deployment, StatefulSet, Services, gp3 StorageClass).
 
-<img width="1600" height="729" alt="workflow" src="https://github.com/user-attachments/assets/944d8dc8-9d71-4538-a5ea-05a98a24be9f" />
-<img width="1336" height="912" alt="pacman" src="https://github.com/user-attachments/assets/0e7e03a2-6f47-4593-b5b8-584a2fd04ee4" />
-
-
-
-
