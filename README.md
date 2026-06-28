@@ -1,58 +1,25 @@
-# pacman
-Pac-Man
+# 🚀 EKS Cloud-Native CI/CD Pipeline: Pac-Man Microservices
 
-## Install dependencies
+## 📌 Overview
+This repository demonstrates a complete Cloud-Native deployment of a multi-tier web application (Pac-Man) on Amazon EKS. It features a fully automated CI/CD pipeline, passwordless AWS authentication via OIDC, and infrastructure provisioning using `eksctl` with Auto Mode.
 
-```
-npm install
-```
+## 🏗️ Cloud Architecture
 
-## Getting started
-
-```
-npm run start
-```
-
-## Development
-
-```
-npm run dev
-```
-
-## Create Application Container Image
-
-### Docker Container Image
-
-The [Dockerfile](docker/Dockerfile) performs the following steps:
-
-1. It is based on Node.js LTS Version 6 (Boron).
-1. It then clones the Pac-Man game into the configured application directory.
-1. Exposes port 8080 for the web server.
-1. Starts the Node.js application using `npm start`.
-
-To build the image run:
-
-```
-cd docker
-docker build -t <registry>/<user>/pacman-nodejs-app .
-```
-
-You can test the image by running:
-
-```
-docker run -p 8000:8080 <registry>/<user>/pacman-nodejs-app
-```
-
-And going to `http://localhost:8000/` to see if you get the Pac-Man game.
-
-Once you're satisfied you can push the image to the container registry.
-
-```
-docker push <registry>/<user>/pacman-nodejs-app
-```
-
-### Building using an s2i image
-
-```
-s2i build . centos/nodejs-6-centos7 pacman
-```
+```mermaid
+graph TD
+    Developer([Developer]) -->|git push| GitHub[GitHub Actions CI/CD]
+    
+    subgraph AWS Cloud
+        GitHub -->|OIDC Auth + Push Image| ECR[(Amazon ECR)]
+        
+        subgraph EKS Cluster
+            GitHub -.->|kubectl set image| EKS_API
+            NLB[Network Load Balancer] -->|Port 80 to 8080| Pacman(Pac-Man Deployment<br/>3 Replicas)
+            Pacman -->|Port 27017| Mongo[(MongoDB StatefulSet<br/>2 Replicas)]
+            Mongo --- EBS[EBS gp3 Storage]
+        end
+        
+        ECR -.->|Image Pull| Pacman
+    end
+    
+    User([Gamer / User]) -->|HTTP| NLB
