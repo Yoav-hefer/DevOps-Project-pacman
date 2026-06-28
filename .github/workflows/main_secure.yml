@@ -53,5 +53,5 @@ jobs:
         kubectl rollout status deployment pacman-deployment
         kubectl get svc
          
-         
+          
          
