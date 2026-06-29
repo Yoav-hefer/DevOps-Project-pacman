@@ -25,7 +25,7 @@ graph TD
     User([Gamer / User]) -->|HTTP| NLB
 ```
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 * Cloud Provider: AWS (EKS, ECR, IAM, NLB, EBS)
 
@@ -37,7 +37,7 @@ graph TD
 
 * Database: MongoDB
 
-🔄 CI/CD Pipeline Workflow
+## 🔄 CI/CD Pipeline Workflow
 
 * Push: Developer pushes code changes to the master branch.
 
@@ -47,7 +47,7 @@ graph TD
 
 * Deploy: The pipeline updates the EKS cluster using an imperative kubectl set image command, rolling out the new version dynamically with zero downtime.
 
-📂 Repository Structure
+## 📂 Repository Structure
 
 * .github/workflows/main_secure.yml: The CI/CD pipeline definition.
 
