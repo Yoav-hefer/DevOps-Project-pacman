@@ -27,15 +27,11 @@ graph TD
 
 ## 🛠️ Tech Stack
 
-* Cloud Provider: AWS (EKS, ECR, IAM, NLB, EBS)
-
-* Containerization: Docker
-
-* Orchestration: Kubernetes (Deployments, StatefulSets, Services, StorageClasses)
-
-* CI/CD: GitHub Actions (OIDC Integration)
-
-* Database: MongoDB
+* **Cloud Provider:** AWS (EKS, ECR, IAM, NLB, EBS)
+* **Containerization:** Docker
+* **Orchestration:** Kubernetes (Deployments, StatefulSets, Services, StorageClasses)
+* **CI/CD:** GitHub Actions (OIDC Integration)
+* **Database:** MongoDB
 
 ## 🔄 CI/CD Pipeline Workflow
 
