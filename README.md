@@ -1,5 +1,15 @@
 # 🚀 EKS Cloud-Native CI/CD Pipeline: Pac-Man Microservices
 
+## 📑 Table of Contents
+* [Overview](#-overview)
+* [Cloud Architecture](#-cloud-architecture)
+* [Tech Stack](#️-tech-stack)
+* [CI/CD Pipeline Workflow](#-cicd-pipeline-workflow)
+* [Repository Structure](#-repository-structure)
+* [How to Trigger the Deployment](#-how-to-trigger-the-deployment)
+
+---
+
 ## 📌 Overview
 This repository demonstrates a complete Cloud-Native deployment of a multi-tier web application (Pac-Man) on Amazon EKS. It features a fully automated CI/CD pipeline, passwordless AWS authentication via OIDC, and infrastructure provisioning using `eksctl` with Auto Mode.
 
