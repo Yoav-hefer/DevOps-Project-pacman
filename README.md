@@ -15,8 +15,7 @@ graph TD
         subgraph EKS Cluster
             GitHub -.->|kubectl set image| EKS_API
             NLB[Network Load Balancer] -->|Port 80 to 8080| Pacman(Pac-Man Deployment<br/>3 Replicas)
-            Pacman -->|Port 27017| Mong<img width="881" height="691" alt="diagram_pacman drawio" src="https://github.com/user-attachments/assets/b64f0187-8aeb-4b45-b096-3c0cb40e19d3" />
-o[(MongoDB StatefulSet<br/>2 Replicas)]
+           Pacman -->|Port 27017| Mongo[(MongoDB StatefulSet<br/>2 Replicas)]
             Mongo --- EBS[EBS gp3 Storage]
         end
         
@@ -46,6 +45,13 @@ o[(MongoDB StatefulSet<br/>2 Replicas)]
 * **.github/workflows/main_secure.yml:** The CI/CD pipeline definition.
 * **ekscluster/cluster.yaml:** Infrastructure as Code (IaC) for EKS Auto Mode.
 * **k8s/: Kubernetes manifests** (Deployment, StatefulSet, Services, gp3 StorageClass).
+## 🚀 How to Trigger the Deployment
+
+This project embraces true Continuous Deployment. To trigger the entire infrastructure update, build, and deployment process, simply commit and push your code to the master branch:
+
+```bash
+git commit -am "Update code"
+git push origin master
 
 <img width="881" height="691" alt="diagram_pacman drawio" src="https://github.com/user-attachments/assets/a84f9645-5b14-4259-815d-7408c6cd124e" />
 <img width="1600" height="729" alt="workflow" src="https://github.com/user-attachments/assets/26f05d8e-41eb-40e8-b3ca-699878431376" />
