@@ -37,7 +37,7 @@ graph TD
 
 * **Push:** Developer pushes code changes to the master branch.
 * **Auth:** GitHub Actions authenticates securely with AWS using a short-lived OIDC token (eliminating the need for static access keys).
-* **Build** & Push: A new Docker image is built, tagged with the unique Git Commit SHA ($GITHUB_SHA), and pushed to Amazon ECR.
+* **Build & Push:** A new Docker image is built, tagged with the unique Git Commit SHA ($GITHUB_SHA), and pushed to Amazon ECR.
 * **Deploy:** The pipeline updates the EKS cluster using an imperative kubectl set image command, rolling out the new version dynamically with zero downtime.
 
 ## 📂 Repository Structure
