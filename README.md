@@ -7,7 +7,6 @@
 * [CI/CD Pipeline Workflow](#-cicd-pipeline-workflow)
 * [Repository Structure](#-repository-structure)
 * [How to Trigger the Deployment](#-how-to-trigger-the-deployment)
-
 ---
 
 ## 📌 Overview
