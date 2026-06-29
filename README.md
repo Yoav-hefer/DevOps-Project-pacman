@@ -3,7 +3,7 @@
 ## 📑 Table of Contents
 * [Overview](#-overview)
 * [Cloud Architecture](#-cloud-architecture)
-* [Tech Stack](#️-tech-stack)
+* [Tech Stack](#-tech-stack)
 * [CI/CD Pipeline Workflow](#-cicd-pipeline-workflow)
 * [Repository Structure](#-repository-structure)
 * [How to Trigger the Deployment](#-how-to-trigger-the-deployment)
