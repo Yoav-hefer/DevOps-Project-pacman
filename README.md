@@ -44,15 +44,16 @@ graph TD
 
 * **.github/workflows/main_secure.yml:** The CI/CD pipeline definition.
 * **ekscluster/cluster.yaml:** Infrastructure as Code (IaC) for EKS Auto Mode.
-* **k8s/: Kubernetes manifests** (Deployment, StatefulSet, Services, gp3 StorageClass).
-## 🚀 How to Trigger the Deployment
+* **k8s/:** Kubernetes manifests (Deployment, StatefulSet, Services, gp3 StorageClass).
+
+## ⚡ How to Trigger the Deployment
 
 This project embraces true Continuous Deployment. To trigger the entire infrastructure update, build, and deployment process, simply commit and push your code to the master branch:
 
 ```bash
 git commit -am "Update code"
 git push origin master
-
+```
 <img width="881" height="691" alt="diagram_pacman drawio" src="https://github.com/user-attachments/assets/a84f9645-5b14-4259-815d-7408c6cd124e" />
 <img width="1600" height="729" alt="workflow" src="https://github.com/user-attachments/assets/26f05d8e-41eb-40e8-b3ca-699878431376" />
 <img width="1336" height="912" alt="pacman" src="https://github.com/user-attachments/assets/962573d6-bcc0-47dc-9134-10adc4729cb8" />
